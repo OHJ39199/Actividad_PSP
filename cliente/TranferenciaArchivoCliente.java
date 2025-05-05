@@ -8,6 +8,7 @@ public class TranferenciaArchivoCliente {
 	private static final String HOST = "10.140.132.36";
 	private static final int PUERTO = 5002;
 	
+	
 	public static void main(String[] args) {
 		
 		try (Socket socket = new Socket (HOST, PUERTO)){
@@ -47,10 +48,10 @@ public class TranferenciaArchivoCliente {
 			System.out.println("servidor: "+ respuesta);
 			
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
+			System.err.println("Error: No se pudo encontrar el host " + HOST);
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.err.println("Error de entrada/salida al comunicarse con el servidor.");
 			e.printStackTrace();
 		}
 	}
